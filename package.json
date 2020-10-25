@@ -1,0 +1,33 @@
+{
+  "name": "pillpet-client",
+  "version": "0.1.0",
+  "main": "src/index.ts",
+  "author": "Pinot. Kim. <pinot.kim@kakao.com>",
+  "repository": "https://github.com/PillPet/pillpet_client.git",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc",
+    "test": "exit"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.4.0",
+    "classcat": "^4.1.0",
+    "dotenv-webpack": "^4.0.0",
+    "next": "latest",
+    "normalize.css": "^8.0.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.2.1",
+    "sass": "^1.27.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.21",
+    "@types/react": "^16.9.16",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-redux": "^7.1.9",
+    "typescript": "4.0"
+  },
+  "license": "MIT"
+}

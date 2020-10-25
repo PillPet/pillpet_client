@@ -1,0 +1,36 @@
+language: node_js
+node_js:
+  - "10"
+before_install:
+  - rm -rf node_modules
+  - zip -r pillpet-client *
+  - mkdir -p deploy
+  - mv pillpet-client.zip deploy/pillpet-client.zip
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: $AWS_BUCKET_NAME
+    region: ap-northeast-2
+    skip_cleanup: true
+    local_dir: deploy
+    wait-until-deployed: true
+    on:
+      repo: PillPet/pillpet_client
+      branch: main
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: $AWS_BUCKET_NAME
+    key: pillpet-client.zip
+    bundle_type: zip
+    application: pinot-ci-cd-app
+    deployment_group: pinot-ci-cd-group
+    region: ap-northeast-2
+    wait-until-deployed: true
+    on:
+      repo: PillPet/pillpet_client
+      branch: main
+branches:
+  only:
+    - main

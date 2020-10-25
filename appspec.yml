@@ -1,0 +1,9 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/docker/deploy/pillpet-client
+hooks:
+  AfterInstall:
+    - location: ci/excute-deploy.sh
+      timeout: 180
