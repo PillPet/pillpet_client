@@ -1,1 +1,1 @@
-export { default } from "../views/page-components/IndexPage/IndexPage";
+export { default } from "../views/page-components/ChatPage/ChatPage";
