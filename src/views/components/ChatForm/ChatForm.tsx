@@ -2,7 +2,7 @@ import { useChatState } from '@store/index';
 import React, {useCallback, useRef} from 'react';
 import css from './ChatForm.module.scss';
 import {useDispatch} from 'react-redux';
-import {setMessage} from '@store/slices/chatSlice';
+import {setMessage, setChatLog} from '@store/slices/chatSlice';
 
 interface ChatFormProps {}
 
@@ -19,6 +19,13 @@ const useSubmit = (message : string) => {
             return;
         }
         dispatch(setMessage(text));
+        dispatch(setChatLog({
+            author: "USER",
+            contentType: "TEXT",
+            text,
+            timestamp: +new Date(),
+            checkbox: []
+        }));
     }, [message]);
     return {
         textRef,
