@@ -1,0 +1,60 @@
+@import "variables";
+@import "mixin";
+
+.chat {
+    &:not(:first-child) .times {
+        display: none;
+    }
+
+    .times {
+        text-align: center;
+        margin: 18px 0;
+        color: #777;
+        font-size: 11px;
+    }
+
+    .bubble {
+        display: flex;
+        align-items: flex-end;
+    
+        &.user {
+            flex-direction: row-reverse;
+    
+            .content {
+                background-color: $service-main-color;
+                color: white;
+    
+                .name {
+                    display: none;
+                }
+            }
+        }
+    
+        &.bot {
+            .content {
+                background-color: #F7F7F7;
+            }
+        }
+    
+        &:not(:last-child) .timestamp {
+            display: none;
+        }
+    
+        .content {
+            padding: 8px 12px;
+            min-width: 20%;
+            max-width: 68%;
+            border-radius: 8px;
+    
+            .name {
+                color: orange;
+                margin-bottom: 10px;
+            }
+        }
+    
+        .timestamp {
+            font-size: 10px;
+            margin: 0 5px;
+        }
+    }
+}
