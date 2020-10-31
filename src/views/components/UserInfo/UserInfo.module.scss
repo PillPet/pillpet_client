@@ -7,7 +7,7 @@
     grid-template-columns: 1fr 9fr;
     grid-template-rows: repeat(2, 25px);
     padding: 15px;
-    border-bottom: 1px solid #EDEDED;
+    border-bottom: 1px solid $service-line-color;
     grid-column-gap: 13px;
     line-height: 100%;
     align-items: center;
@@ -33,7 +33,7 @@
         .summary {
             margin: 0;
             font-size: 12px;
-            color: #4F5E7B;
+            color: $service-second-color;
         }
     }
 }
