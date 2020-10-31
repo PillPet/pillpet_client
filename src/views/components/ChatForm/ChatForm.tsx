@@ -81,7 +81,7 @@ const ChatForm: React.FC<ChatFormProps> = () => {
                     </select>
                 </div>
                 <div>
-                <textarea ref={checkBoxRef} defaultValue="[]"></textarea>
+                <textarea ref={checkBoxRef} defaultValue={`[\n{"actionText" : "", "displayText" : ""}\n]`}></textarea>
                 </div>
             </div>
             <form className={css.ChatForm} onSubmit={onSubmit}>
