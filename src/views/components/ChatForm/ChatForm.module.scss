@@ -4,10 +4,18 @@
 .form {
     position: fixed;
     bottom: 0;
-    margin: 5px;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 9px 21px;
+    width: 100vw;
+    border-top: solid 1px #F0F0F0;
+    height: $chat-form-height;
 
     .debug {
         display: flex;
+        // display: none;
         align-items: center;
     }
 
@@ -18,31 +26,21 @@
     .ChatForm {
         display: grid;
         box-sizing: border-box;
+        margin: 0 auto;
         padding: 5px;
-        grid-template-columns: 8fr 2fr;
-        border: solid 1px black;
+        grid-template-columns: 1fr;
         border-radius: 500px;
-        height: $chat-form-height;
-
-        .textInput,
-        .buttonWrap button {
-            display: block;
-            width: 100%;
-            appearance: none;
-            border: solid 1px transparent;
-            background: transparent;
-            outline: none;
-        }
+        background-color: #EFEFEF;
+        max-width: $page-max-width;
 
         .textInput {
             padding: 10px;
-        }
-
-        .buttonWrap {
-            display: flex;
-            justify-content: center;
-            border-radius: 500px;
-            background-color: #aaa;
+            width: 100%;
+            appearance: none;
+            border: solid 1px transparent;
+            color: inherit;
+            background: transparent;
+            outline: none;
         }
     }
 }

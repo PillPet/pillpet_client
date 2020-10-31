@@ -91,11 +91,6 @@ const ChatForm: React.FC<ChatFormProps> = () => {
                     placeholder={defaultMessage}
                     type="text"
                 />
-                <div className={css.buttonWrap}>
-                    <button type="submit">
-                        전송
-                    </button>
-                </div>
             </form>
         </div>
     )
