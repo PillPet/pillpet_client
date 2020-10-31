@@ -50,6 +50,52 @@
                 color: orange;
                 margin-bottom: 10px;
             }
+
+            .options {
+                display: flex;
+                width: 100%;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                overflow-x: auto;
+
+                &.TEXT {
+                    display: none !important;
+                }
+
+                &.MIXIN li {
+                    width: 50%;
+                }
+                
+                &.LIST {
+                    ::-webkit-scrollbar {
+                        display: none;
+                        height: 0;
+                    }
+
+                    li {
+                        min-width: 25%;
+                    }
+                }
+
+                li {
+                    margin: 8px 0 12px 0;
+
+                    &:not(:last-child) {
+                        margin-right: 11px;
+                    }
+
+                    button {
+                        min-width: 100%;
+                        border: solid 1px $service-main-color;
+                        background-color: #fff;
+                        padding: 4px 7.25px;
+                        border-radius: 5px;
+                        word-break: keep-all;
+                        cursor: pointer;
+                    }
+                }
+            }
         }
     
         .timestamp {
