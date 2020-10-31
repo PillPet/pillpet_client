@@ -88,7 +88,7 @@
                     button {
                         min-width: 100%;
                         border: solid 1px $service-main-color;
-                        background-color: #fff;
+                        background-color: $page-bg-color;
                         padding: 4px 7.25px;
                         border-radius: 5px;
                         word-break: keep-all;
