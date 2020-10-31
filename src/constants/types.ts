@@ -1,6 +1,17 @@
+export enum author {
+    "USER",
+    "BOT"
+}
+
+export enum contentType {
+    "TEXT",
+    "MIXIN",
+    "LIST"
+}
+
 export interface Chat {
-    author: "USER" | "BOT",
-    contentType: "TEXT" | "MIXIN" | "LIST",
+    author: author,
+    contentType: contentType,
     timestamp: number,
     text: string,
     checkbox: CheckBox[]
