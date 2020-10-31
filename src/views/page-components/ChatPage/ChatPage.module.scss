@@ -2,10 +2,4 @@
 @import "mixin";
 
 .ChatPage {
-    max-width: $page-max-width;
-    margin: 0 auto;
-
-    @include mobile {
-        max-width: 425px;
-    }
 }
