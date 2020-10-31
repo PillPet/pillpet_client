@@ -1,33 +1,47 @@
 @import 'variables';
 @import 'mixin';
 
-.ChatForm {
-    display: grid;
-    box-sizing: border-box;
+.form {
+    position: fixed;
+    bottom: 0;
     margin: 5px;
-    padding: 5px;
-    grid-template-columns: 8fr 2fr;
-    border: solid 1px black;
-    border-radius: 500px;
 
-    .textInput,
-    .buttonWrap button {
-        display: block;
-        width: 100%;
-        appearance: none;
-        border: solid 1px transparent;
-        background: transparent;
-        outline: none;
-    }
-
-    .textInput {
-        padding: 10px;
-    }
-
-    .buttonWrap {
+    .debug {
         display: flex;
-        justify-content: center;
+        align-items: center;
+    }
+
+    .none {
+        display: none;
+    }
+
+    .ChatForm {
+        display: grid;
+        box-sizing: border-box;
+        padding: 5px;
+        grid-template-columns: 8fr 2fr;
+        border: solid 1px black;
         border-radius: 500px;
-        background-color: #aaa;
+
+        .textInput,
+        .buttonWrap button {
+            display: block;
+            width: 100%;
+            appearance: none;
+            border: solid 1px transparent;
+            background: transparent;
+            outline: none;
+        }
+
+        .textInput {
+            padding: 10px;
+        }
+
+        .buttonWrap {
+            display: flex;
+            justify-content: center;
+            border-radius: 500px;
+            background-color: #aaa;
+        }
     }
 }
