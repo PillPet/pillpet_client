@@ -1,5 +1,5 @@
 import { useChatState } from '@store/index';
-import React, {useCallback, useRef} from 'react';
+import React, {useCallback, useEffect, useRef} from 'react';
 import css from './ChatForm.module.scss';
 import {useDispatch} from 'react-redux';
 import {setMessage, setChatLog} from '@store/slices/chatSlice';
@@ -51,6 +51,16 @@ const useSubmit = (message : string) => {
             }));
         }
     }, [message]);
+    // Welcome message
+    useEffect(() => {
+        dispatch(setChatLog({
+            author: author.BOT,
+            contentType: contentType.TEXT,
+            text : "안녕하세요? 펫필을 찾아주셔서 감사합니다.\n애견 종류(견종)은 무엇인가요?",
+            timestamp: +new Date(),
+            checkbox: []
+        }));
+    }, []);
     return {
         textRef,
         userRef,
