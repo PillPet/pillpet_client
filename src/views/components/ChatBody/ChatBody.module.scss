@@ -8,5 +8,5 @@
 
     max-width: $page-max-width;
     margin: 0 auto;
-    padding: 0 21px $chat-form-height + 14px 21px;
+    padding: 0 21px calc(#{$chat-form-height} + #{$chat-info-height} + 14px) 21px;
 }
