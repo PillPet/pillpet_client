@@ -6,7 +6,8 @@ export enum author {
 export enum contentType {
     "TEXT",
     "MIXIN",
-    "LIST"
+    "LIST",
+    "CARDS"
 }
 
 export interface Chat {
@@ -15,6 +16,15 @@ export interface Chat {
     timestamp: number,
     text: string,
     checkbox: CheckBox[]
+    cards: Cards[]
+}
+
+export interface Cards {
+    topic: string,
+    label?: string,
+    name: string,
+    location: string,
+    price: number
 }
 
 export interface CheckBox {

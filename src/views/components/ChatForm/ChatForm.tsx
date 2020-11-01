@@ -17,6 +17,7 @@ const useSubmit = (message : string) => {
     const userRef = useRef<HTMLSelectElement | author>();
     const typeRef = useRef<HTMLSelectElement | contentType>();
     const checkBoxRef = useRef<HTMLTextAreaElement | string>();
+    const cardRef = useRef<HTMLTextAreaElement | string>();
 
     const onSubmit = useCallback((evt) => {
         evt.preventDefault();
@@ -39,7 +40,8 @@ const useSubmit = (message : string) => {
                 contentType: Number.parseInt(typeRef.current?.value),
                 text,
                 timestamp: +new Date(),
-                checkbox: JSON.parse(checkBoxRef.current?.value)
+                checkbox: JSON.parse(checkBoxRef.current?.value),
+                cards: JSON.parse(cardRef.current?.value)
             }))
         } else {
             dispatch(setChatLog({
@@ -47,7 +49,8 @@ const useSubmit = (message : string) => {
                 contentType: contentType.TEXT,
                 text,
                 timestamp: +new Date(),
-                checkbox: []
+                checkbox: [],
+                cards: []
             }));
         }
     }, [message]);
@@ -58,13 +61,15 @@ const useSubmit = (message : string) => {
             contentType: contentType.TEXT,
             text : "안녕하세요? 펫필을 찾아주셔서 감사합니다.\n애견 종류(견종)은 무엇인가요?",
             timestamp: +new Date(),
-            checkbox: []
+            checkbox: [],
+            cards: []
         }));
     }, []);
     return {
         textRef,
         userRef,
         typeRef,
+        cardRef,
         checkBoxRef,
         onSubmit
     }
@@ -72,7 +77,7 @@ const useSubmit = (message : string) => {
 
 const ChatForm: React.FC<ChatFormProps> = () => {
     const {message} = useChatState();
-    const {textRef, userRef, typeRef, checkBoxRef, onSubmit} = useSubmit(message);
+    const {textRef, userRef, typeRef, checkBoxRef, cardRef, onSubmit} = useSubmit(message);
     const isDev = process.env.NODE_ENV === "development";
     return (
         <div className={css.form}>
@@ -88,10 +93,12 @@ const ChatForm: React.FC<ChatFormProps> = () => {
                         <option value={contentType.TEXT}>TEXT</option>
                         <option value={contentType.MIXIN}>MIXIN</option>
                         <option value={contentType.LIST}>LIST</option>
+                        <option value={contentType.CARDS}>CARDS</option>
                     </select>
                 </div>
                 <div>
                 <textarea ref={checkBoxRef} defaultValue={`[\n{"actionText" : "", "displayText" : ""}\n]`}></textarea>
+                <textarea ref={cardRef} defaultValue={`[\n{"topic": "", "label": "", "name": "", "location": "", "price": 0}\n]`}></textarea>
                 </div>
             </div>
             <form className={css.ChatForm} onSubmit={onSubmit}>

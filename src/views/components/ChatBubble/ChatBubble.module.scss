@@ -6,6 +6,16 @@
         display: none;
     }
 
+    button {
+        min-width: 100%;
+        border: solid 1px $service-main-color;
+        background-color: $page-bg-color;
+        padding: 4px 7.25px;
+        border-radius: 5px;
+        word-break: keep-all;
+        cursor: pointer;
+    }
+
     .times {
         text-align: center;
         margin: 18px 0;
@@ -89,16 +99,6 @@
                     &:not(:last-child) {
                         margin-right: 11px;
                     }
-
-                    button {
-                        min-width: 100%;
-                        border: solid 1px $service-main-color;
-                        background-color: $page-bg-color;
-                        padding: 4px 7.25px;
-                        border-radius: 5px;
-                        word-break: keep-all;
-                        cursor: pointer;
-                    }
                 }
             }
         }
@@ -108,4 +108,63 @@
             margin: 0 5px;
         }
     }
+
+        .cardList {
+            overflow: hidden;
+            width: calc(100vw - 42px);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-column-gap: 18px;
+            list-style: none;
+            margin: 18px 0 0 0;
+            padding: 10px 0 0 0;
+            overflow-x: scroll;
+            max-width: 768px;
+
+            li {
+                border-radius: 8px;
+                background-color: rgba(47, 128, 237, 0.1);
+                min-width: 180px;
+                box-sizing: border-box;
+                word-break: keep-all;
+
+                .card {
+                    position: relative;
+                    padding: 20px 12px;
+                    text-align: center;
+
+                    .label {
+                        position: absolute;
+                        top: -8px;
+                        left: 12px;
+                        background-color: rgba(250,103,103,1);
+                        color: white;
+                        border-radius: 500px;
+                        padding: 2px 7px;
+                        font-size: 12px;
+                    }
+
+                    .title {
+                        font-size: 20px;
+                        margin-bottom: 5px;
+                    }
+
+                    .location {
+                        font-size: 16px;
+                    }
+
+                    .price {
+                        margin: 15px 0 5px 0;
+
+                        span {
+                            color: $service-main-color;
+                        }
+                    }
+
+                    button {
+                        color: $service-main-color;
+                    }
+                }
+            }
+        }
 }

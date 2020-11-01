@@ -44,6 +44,26 @@ const ChatBubble : React.FC<ChatBubbleProps> = ({ chat }) => {
                     {moment(chat.timestamp).format('HH:MM')}
                 </span>
             </div>
+
+            <div className={css.cardContainer}>
+                <ul className={css.cardList}>
+                    {chat.cards.map((item) => item.name ? 
+                        <li>
+                            <div className={css.card}>
+                                {item.label ? <span className={css.label}>{item.label}</span> : null}
+                                <h2 className={css.title}>{item.name}</h2>
+                                <h3 className={css.location}>{item.location}</h3>
+                                <h6 className={css.price}>
+                                    <span>{item.topic}</span> 예상 총 비용
+                                </h6>
+                                <button onClick={() => console.log('111')}>
+                                    {item.price.toLocaleString()} 원
+                                </button>
+                            </div>
+                        </li> : null
+                    )}
+                </ul>
+            </div>
         </div>
     )
 }
