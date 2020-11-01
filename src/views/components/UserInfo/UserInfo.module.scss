@@ -4,7 +4,7 @@
 .userInfo {
     display: grid;
     height: 49px;
-    grid-template-columns: 1fr 9fr;
+    grid-template-columns: auto 1fr;
     grid-template-rows: repeat(2, 25px);
     padding: 15px;
     border-bottom: 1px solid $service-line-color;
@@ -15,9 +15,9 @@
 
     .imgWrap {
         grid-row: 1 / 3;
+        height: 100%;
 
         img {
-            width: 100%;
             height: 100%;
             border-radius: 50%;
         }
