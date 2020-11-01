@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
+    "body-scroll-lock": "^3.1.5",
     "classcat": "^4.1.0",
     "dotenv-webpack": "^4.0.0",
     "moment": "^2.29.1",
@@ -26,6 +27,7 @@
     "sass": "^1.27.0"
   },
   "devDependencies": {
+    "@types/body-scroll-lock": "^2.6.1",
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
