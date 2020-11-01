@@ -15,9 +15,16 @@
     background-color: $page-bg-color;
 
     .debug {
-        display: flex;
-        // display: none;
-        align-items: center;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        text-align: left;
+        opacity: 0.5;
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
     }
 
     .none {
