@@ -65,6 +65,10 @@
                 }
 
                 &.MIXIN li {
+                    &:only-child {
+                        width: 100%;
+                    }
+
                     width: 50%;
                 }
                 
